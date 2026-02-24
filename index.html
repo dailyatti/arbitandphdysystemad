@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuantSports Analytics — Math-Driven Market Efficiency</title>
     <meta name="description"
-        content="Arbitrage calculator + PhD-level models to identify pricing inefficiencies and +EV spots. Execution-dependent.">
+        content="Arbitrage calculator + probabilistic models to analyze odds, detect inefficiencies, and support disciplined execution. Execution-dependent.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,8 +78,8 @@
             <!-- Stats Row -->
             <div class="hero__stats">
                 <div class="stat">
-                    <span class="stat__number">0.5-6%</span>
-                    <span class="stat__label">Typical Arb Edge</span>
+                    <span class="stat__number">varies</span>
+                    <span class="stat__label">Pricing gaps</span>
                 </div>
                 <div class="stat__divider"></div>
                 <div class="stat">
@@ -130,7 +130,7 @@
                     <div class="step-card__num">03</div>
                     <div class="step-card__icon"><i class="fa-solid fa-sack-dollar"></i></div>
                     <h4>Capture the Edge</h4>
-                    <p>Execute the positions. No matter who wins, your return is defined before the event starts.</p>
+                    <p>Execute the positions. Outcome coverage is defined upfront — execution depends on timing, limits, and market rules.</p>
                 </div>
             </div>
 
@@ -238,7 +238,7 @@
                                         <span>Scenario</span>
                                         <span>Calculation</span>
                                         <span>Payout</span>
-                                        <span>Profit</span>
+                                        <span>Net Delta</span>
                                     </div>
                                     <div class="payout-row">
                                         <span>Player A Wins</span>
@@ -264,7 +264,7 @@
                                     <span class="result-highlight__value">Positive Delta — Statistical Edge</span>
                                 </div>
                             </div>
-                            <p class="result-highlight__note">No matter who wins. Execution-dependent edge. Pure mathematics.</p>
+                            <p class="result-highlight__note">Outcome-agnostic structure. Execution-dependent. Pure mathematics.</p>
                         </div>
                     </div>
                 </div>
@@ -338,7 +338,7 @@
                             $$\text{Edge} = P_{\text{win}} \times O - 1$$
                         </div>
                         <p class="math-note">We only execute when <span class="math-inline text--green">\(\text{Edge} >
-                                0\)</span>. A 5% edge means for every 100 units utilized, you expect 5 units created long-term.</p>
+                                0\)</span>. A 5% edge corresponds to an expected value of +5 units per 100 units over the long run.</p>
                     </div>
 
                     <div class="math-card math-card--purple">
@@ -467,7 +467,7 @@
                                 <span class="result-highlight__value">+42.94 units per occurrence</span>
                             </div>
                         </div>
-                        <p class="result-highlight__note">Over 100 similar occurrences, expected total profit: <strong
+                        <p class="result-highlight__note">Over 100 similar occurrences, expected aggregate EV: <strong
                                 class="text--green">Positive Yield</strong>. Variance shrinks. Math wins.</p>
                     </div>
                 </div>
@@ -528,6 +528,7 @@
             </div>
             <p class="footer__copy">&copy; 2026 QuantSports Modeling Suite. All rights reserved.</p>
             <p class="footer__disclaimer">Disclaimer: Statistical models carry inherent risks. Past performance of a model is not indicative of future market outcomes.</p>
+            <p class="footer__disclaimer">18+ only. Gamble responsibly. This tool is educational/analytical and does not guarantee outcomes.</p>
         </div>
     </footer>
 
