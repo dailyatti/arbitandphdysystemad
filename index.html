@@ -1,189 +1,540 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbitrage & PhD Betting System | Professional Sports Investment</title>
-    
-    <!-- Google Fonts -->
+    <title>Arbitrage Calculator Pro & PhD Betting System — Risk-Free Sports Investment</title>
+    <meta name="description"
+        content="Professional-grade arbitrage calculator and PhD-level betting system. Guaranteed risk-free profits through mathematical exploitation of bookmaker odds.">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- KaTeX for Math rendering -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71bZBTIQHQ" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYYO/HeKkG+01X" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="background-effects">
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
-        <div class="glow-orb orb-3"></div>
-    </div>
 
-    <!-- Mode Toggle -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
-        <i class="fa-solid fa-sun" id="theme-icon"></i>
-    </button>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+    <div class="bg-glow bg-glow--3"></div>
 
-    <header class="hero glass-panel fade-in">
-        <div class="hero-content">
-            <span class="badge">Professional Grade</span>
-            <h1 class="gradient-text">Master the Mathematics of Betting</h1>
-            <p class="subtitle">Discover the statistically proven Arbitrage Calculator Pro and the PhD Betting System. Built for serious investors who treat sports betting as a complex financial market.</p>
-            <div class="hero-actions">
-                <a href="#arbitrage" class="btn btn-primary">Discover Arbitrage</a>
-                <a href="#phd-system" class="btn btn-secondary">Explore PhD System</a>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">
+                <span class="nav__logo-icon"><i class="fa-solid fa-chart-line"></i></span>
+                <span>BettingPro</span>
+            </a>
+            <div class="nav__links">
+                <a href="#arbitrage">Arbitrage</a>
+                <a href="#phd">PhD System</a>
+                <a href="#pricing" class="nav__cta-link">Get Access</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fa-solid fa-sun" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero__container">
+            <div class="hero__badge">
+                <i class="fa-solid fa-bolt"></i> Used by 500+ Professional Bettors
+            </div>
+            <h1 class="hero__title">
+                Stop Gambling.<br>
+                <span class="hero__title--gradient">Start Investing.</span>
+            </h1>
+            <p class="hero__subtitle">
+                Transform sports betting into a predictable income stream using <strong>risk-free arbitrage</strong> and
+                <strong>PhD-level probabilistic models</strong>. Our tools do the math — you collect the profit.
+            </p>
+            <div class="hero__actions">
+                <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank"
+                    rel="noopener noreferrer" class="btn btn--primary btn--lg">
+                    <i class="fa-solid fa-rocket"></i> Get Instant Access
+                </a>
+                <a href="#arbitrage" class="btn btn--ghost btn--lg">
+                    <i class="fa-solid fa-play"></i> See How It Works
+                </a>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="hero__stats">
+                <div class="stat">
+                    <span class="stat__number" data-target="6.2">6.2%</span>
+                    <span class="stat__label">Avg. ROI per Arb</span>
+                </div>
+                <div class="stat__divider"></div>
+                <div class="stat">
+                    <span class="stat__number">0%</span>
+                    <span class="stat__label">Risk with Arbitrage</span>
+                </div>
+                <div class="stat__divider"></div>
+                <div class="stat">
+                    <span class="stat__number">+EV</span>
+                    <span class="stat__label">Every Single Bet</span>
+                </div>
+                <div class="stat__divider"></div>
+                <div class="stat">
+                    <span class="stat__number">24/7</span>
+                    <span class="stat__label">Market Scanning</span>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="container">
-        <!-- Arbitrage Calculator Pro Section -->
-        <section id="arbitrage" class="feature-section glass-panel fade-in delay-1">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-scale-balanced icon-gradient"></i> Arbitrage Calculator Pro</h2>
-                <p>Guarantee profit by exploiting market inefficiencies and bookmaker discrepancies.</p>
+    <!-- ======================= ARBITRAGE SECTION ======================= -->
+    <section id="arbitrage" class="section">
+        <div class="section__container">
+            <div class="section__header">
+                <span class="section__badge section__badge--blue"><i class="fa-solid fa-shield-halved"></i> Zero
+                    Risk</span>
+                <h2 class="section__title">Arbitrage Calculator <span class="text--gradient-blue">Pro</span></h2>
+                <p class="section__desc">Exploit price discrepancies between bookmakers. Cover every outcome.
+                    <strong>Profit is mathematically guaranteed</strong> — regardless of who wins.</p>
             </div>
-            
-            <div class="content-grid">
-                <div class="text-content shadow-box">
-                    <h3>The Mechanics of Arbitrage</h3>
-                    <p>An arbitrage opportunity ("surebet") arises when the sum of the implied probabilities for all possible outcomes of an event is strictly less than 1 (or 100%). By strategically covering all outcomes with the correct stake allocation, an investor guarantees a return regardless of the event's result.</p>
-                    
-                    <div class="formula-box">
-                        <h4>Condition for Arbitrage</h4>
-                        <div class="math-expr">
-                            $$ \sum_{i=1}^{n} \frac{1}{O_i} < 1 $$
+
+            <!-- How It Works Visual -->
+            <div class="how-it-works">
+                <div class="step-card">
+                    <div class="step-card__num">01</div>
+                    <div class="step-card__icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h4>Find Discrepancy</h4>
+                    <p>Scan odds across bookmakers for events where implied probabilities sum to less than 100%.</p>
+                </div>
+                <div class="step-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="step-card">
+                    <div class="step-card__num">02</div>
+                    <div class="step-card__icon"><i class="fa-solid fa-calculator"></i></div>
+                    <h4>Calculate Stakes</h4>
+                    <p>Our engine computes the optimal stake allocation for each outcome to equalize your payout.</p>
+                </div>
+                <div class="step-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="step-card">
+                    <div class="step-card__num">03</div>
+                    <div class="step-card__icon"><i class="fa-solid fa-sack-dollar"></i></div>
+                    <h4>Collect Profit</h4>
+                    <p>Place the bets. No matter who wins, you earn a guaranteed return on your investment.</p>
+                </div>
+            </div>
+
+            <!-- Math Deep Dive -->
+            <div class="math-section">
+                <h3 class="math-section__title"><i class="fa-solid fa-square-root-variable"></i> The Mathematics Behind
+                    Arbitrage</h3>
+
+                <div class="math-grid">
+                    <div class="math-card">
+                        <div class="math-card__header">
+                            <span class="math-card__tag">Foundation</span>
+                            <h4>Arbitrage Detection Condition</h4>
                         </div>
-                        <p class="formula-caption">Where \( O_i \) represents the decimal odds for outcome \( i \), and \( n \) is the total number of mutually exclusive outcomes.</p>
+                        <p>An arbitrage exists when the sum of implied probabilities across all mutually exclusive
+                            outcomes is <strong>strictly less than 1</strong>:</p>
+                        <div class="math-display">
+                            $$\text{Arb Margin} = \sum_{i=1}^{n} \frac{1}{O_i} < 1$$ </div>
+                                <p class="math-note">Where <span class="math-inline">\(O_i\)</span> = decimal odds for
+                                    outcome <span class="math-inline">\(i\)</span>, and <span
+                                        class="math-inline">\(n\)</span> = total number of possible outcomes.</p>
+                        </div>
+
+                        <div class="math-card">
+                            <div class="math-card__header">
+                                <span class="math-card__tag">Core Formula</span>
+                                <h4>Optimal Stake Allocation</h4>
+                            </div>
+                            <p>To guarantee equal profit regardless of outcome, distribute your total investment <span
+                                    class="math-inline">\(T\)</span> as follows:</p>
+                            <div class="math-display">
+                                $$S_i = \frac{T \cdot \dfrac{1}{O_i}}{\displaystyle\sum_{j=1}^{n} \dfrac{1}{O_j}}$$
+                            </div>
+                            <p class="math-note">Where <span class="math-inline">\(S_i\)</span> = stake on outcome <span
+                                    class="math-inline">\(i\)</span>, <span class="math-inline">\(T\)</span> = total
+                                bankroll to invest.</p>
+                        </div>
+
+                        <div class="math-card math-card--wide">
+                            <div class="math-card__header">
+                                <span class="math-card__tag">Profit Formula</span>
+                                <h4>Guaranteed Return on Investment</h4>
+                            </div>
+                            <p>Your guaranteed profit percentage from any arbitrage opportunity is:</p>
+                            <div class="math-display">
+                                $$\text{ROI} = \left(\frac{1}{\displaystyle\sum_{i=1}^{n} \frac{1}{O_i}} - 1\right)
+                                \times 100\%$$
+                            </div>
+                            <p class="math-note">The smaller the margin sum, the larger your guaranteed profit. Values
+                                below 0.95 are excellent opportunities.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="text-content shadow-box">
-                    <h3>Optimal Stake Allocation</h3>
-                    <p>To mathematically distribute our bankroll such that the profit is perfectly balanced across any outcome, our software uses the inverse proportion of the odds against the sum of implied probabilities.</p>
-                    
-                    <div class="formula-box">
-                        <h4>Stake Formula</h4>
-                        <div class="math-expr">
-                            $$ S_i = \frac{T \times \frac{1}{O_i}}{\sum_{j=1}^{n} \frac{1}{O_j}} $$
+                <!-- Live Example -->
+                <div class="example-section">
+                    <h3 class="example-section__title"><i class="fa-solid fa-flask"></i> Worked Example: Step-by-Step
+                        Derivation</h3>
+                    <div class="example-card">
+                        <div class="example-card__scenario">
+                            <div class="example-card__match">
+                                <span class="example-card__sport"><i class="fa-solid fa-baseball-bat-ball"></i> Tennis —
+                                    ATP Final</span>
+                                <h4>Player A vs Player B</h4>
+                            </div>
+                            <div class="example-card__odds">
+                                <div class="odds-chip">
+                                    <span class="odds-chip__label">Bookmaker 1</span>
+                                    <span class="odds-chip__value">Player A @ <strong>2.10</strong></span>
+                                </div>
+                                <div class="odds-chip">
+                                    <span class="odds-chip__label">Bookmaker 2</span>
+                                    <span class="odds-chip__value">Player B @ <strong>2.15</strong></span>
+                                </div>
+                            </div>
                         </div>
-                        <p class="formula-caption">Where \( S_i \) is the stake for outcome \( i \), and \( T \) is your Total Investment Bankroll.</p>
+
+                        <div class="example-card__steps">
+                            <div class="derivation-step">
+                                <span class="derivation-step__num">Step 1</span>
+                                <strong>Check for Arbitrage</strong>
+                                <div class="math-display math-display--sm">
+                                    $$\frac{1}{2.10} + \frac{1}{2.15} = 0.4762 + 0.4651 = 0.9413$$
+                                </div>
+                                <p class="result-inline result-inline--pass"><i class="fa-solid fa-circle-check"></i>
+                                    0.9413 < 1.0 — <strong>Arbitrage Confirmed!</strong></p>
+                            </div>
+
+                            <div class="derivation-step">
+                                <span class="derivation-step__num">Step 2</span>
+                                <strong>Calculate Stakes</strong> (Total Investment: $1,000)
+                                <div class="math-display math-display--sm">
+                                    $$S_A = \frac{1000 \times 0.4762}{0.9413} = \$505.84$$
+                                </div>
+                                <div class="math-display math-display--sm">
+                                    $$S_B = \frac{1000 \times 0.4651}{0.9413} = \$494.16$$
+                                </div>
+                            </div>
+
+                            <div class="derivation-step">
+                                <span class="derivation-step__num">Step 3</span>
+                                <strong>Verify Guaranteed Payout</strong>
+                                <div class="payout-table">
+                                    <div class="payout-row payout-row--header">
+                                        <span>Scenario</span>
+                                        <span>Calculation</span>
+                                        <span>Payout</span>
+                                        <span>Profit</span>
+                                    </div>
+                                    <div class="payout-row">
+                                        <span>Player A Wins</span>
+                                        <span>$505.84 × 2.10</span>
+                                        <span class="text--green">$1,062.26</span>
+                                        <span class="text--green">+$62.26</span>
+                                    </div>
+                                    <div class="payout-row">
+                                        <span>Player B Wins</span>
+                                        <span>$494.16 × 2.15</span>
+                                        <span class="text--green">$1,062.44</span>
+                                        <span class="text--green">+$62.44</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="example-card__result">
+                            <div class="result-highlight">
+                                <div class="result-highlight__icon"><i class="fa-solid fa-trophy"></i></div>
+                                <div>
+                                    <span class="result-highlight__label">Guaranteed Profit</span>
+                                    <span class="result-highlight__value">+$62.26 — 6.23% ROI</span>
+                                </div>
+                            </div>
+                            <p class="result-highlight__note">No matter who wins. Zero risk. Pure mathematics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section__cta">
+                    <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank"
+                        rel="noopener noreferrer" class="btn btn--primary btn--lg btn--glow">
+                        <i class="fa-solid fa-cart-shopping"></i> Get Arbitrage Calculator Pro
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <!-- ======================= PhD SYSTEM SECTION ======================= -->
+    <section id="phd" class="section section--alt">
+        <div class="section__container">
+            <div class="section__header">
+                <span class="section__badge section__badge--purple"><i class="fa-solid fa-graduation-cap"></i> PhD
+                    Level</span>
+                <h2 class="section__title">PhD Betting <span class="text--gradient-purple">System</span></h2>
+                <p class="section__desc">A publication-grade probabilistic engine that identifies <strong>positive
+                        Expected Value (+EV)</strong> bets with mathematical precision. When the edge is in your favor,
+                    compounding does the rest.</p>
+            </div>
+
+            <!-- Pillars -->
+            <div class="pillar-grid">
+                <div class="pillar-card">
+                    <div class="pillar-card__icon pillar-card__icon--green"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h4>Probability Modeling</h4>
+                    <p>Bivariate Poisson, xG regression, and Bayesian networks to estimate true outcome probabilities.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-card__icon pillar-card__icon--blue"><i class="fa-solid fa-crosshairs"></i></div>
+                    <h4>Edge Detection</h4>
+                    <p>Compare our model's probabilities against bookmaker odds to find exploitable value gaps.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-card__icon pillar-card__icon--pink"><i class="fa-solid fa-coins"></i></div>
+                    <h4>Kelly Staking</h4>
+                    <p>Fractional Kelly Criterion dynamically sizes each bet for optimal geometric bankroll growth.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-card__icon pillar-card__icon--orange"><i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <h4>Risk Control</h4>
+                    <p>CVaR95 Monte Carlo simulation protects against ruin and keeps drawdowns manageable.</p>
+                </div>
+            </div>
+
+            <!-- Math Deep Dive -->
+            <div class="math-section">
+                <h3 class="math-section__title"><i class="fa-solid fa-atom"></i> Core Mathematical Framework</h3>
+
+                <div class="math-grid">
+                    <div class="math-card math-card--purple">
+                        <div class="math-card__header">
+                            <span class="math-card__tag math-card__tag--purple">Core</span>
+                            <h4>Expected Value (EV)</h4>
+                        </div>
+                        <p>A bet has positive expected value when your estimated probability multiplied by the payout
+                            exceeds your stake:</p>
+                        <div class="math-display">
+                            $$EV = \underbrace{P_{\text{win}} \cdot (O - 1)}_{\text{expected gain}} - \underbrace{(1 -
+                            P_{\text{win}}) \cdot 1}_{\text{expected loss}}$$
+                        </div>
+                        <p>Simplified to the <strong>edge percentage</strong>:</p>
+                        <div class="math-display">
+                            $$\text{Edge} = P_{\text{win}} \times O - 1$$
+                        </div>
+                        <p class="math-note">We only bet when <span class="math-inline text--green">\(\text{Edge} >
+                                0\)</span>. A 5% edge means for every $100 wagered, you expect $5 profit long-term.</p>
+                    </div>
+
+                    <div class="math-card math-card--purple">
+                        <div class="math-card__header">
+                            <span class="math-card__tag math-card__tag--purple">Staking</span>
+                            <h4>Fractional Kelly Criterion</h4>
+                        </div>
+                        <p>Determines the mathematically optimal fraction of your bankroll to wager on each bet:</p>
+                        <div class="math-display">
+                            $$f^* = c \cdot \frac{b \cdot p - q}{b}$$
+                        </div>
+                        <div class="math-vars">
+                            <div class="math-var"><span class="math-inline">\(b\)</span> = net decimal odds <span
+                                    class="math-inline">\((O - 1)\)</span></div>
+                            <div class="math-var"><span class="math-inline">\(p\)</span> = probability of winning</div>
+                            <div class="math-var"><span class="math-inline">\(q\)</span> = probability of losing <span
+                                    class="math-inline">\((1 - p)\)</span></div>
+                            <div class="math-var"><span class="math-inline">\(c\)</span> = fractional multiplier
+                                (typically 0.25)</div>
+                        </div>
+                        <p class="math-note">Using <span class="math-inline">\(c = 0.25\)</span> (Quarter Kelly) reduces
+                            variance by 75% while retaining 50% of the growth rate of Full Kelly.</p>
+                    </div>
+
+                    <div class="math-card math-card--purple">
+                        <div class="math-card__header">
+                            <span class="math-card__tag math-card__tag--purple">Prediction</span>
+                            <h4>Bivariate Poisson Model</h4>
+                        </div>
+                        <p>Models the joint probability of two teams scoring <span class="math-inline">\(x\)</span> and
+                            <span class="math-inline">\(y\)</span> goals, accounting for correlation <span
+                                class="math-inline">\(\theta\)</span>:</p>
+                        <div class="math-display">
+                            $$P(X\!=\!x, Y\!=\!y) = e^{-(\lambda+\mu+\theta)} \frac{\lambda^x}{x!}\frac{\mu^y}{y!}
+                            \sum_{k=0}^{\min(x,y)} \binom{x}{k}\binom{y}{k} k!
+                            \left(\frac{\theta}{\lambda\mu}\right)^{\!k}$$
+                        </div>
+                        <p class="math-note">Where <span class="math-inline">\(\lambda\)</span> = home attack, <span
+                                class="math-inline">\(\mu\)</span> = away attack, <span
+                                class="math-inline">\(\theta\)</span> = correlation coefficient (Dixon-Coles
+                            correction).</p>
+                    </div>
+
+                    <div class="math-card math-card--purple">
+                        <div class="math-card__header">
+                            <span class="math-card__tag math-card__tag--purple">Adaptation</span>
+                            <h4>Bayesian Updating</h4>
+                        </div>
+                        <p>Our system continuously updates probabilities as new evidence (injuries, weather, line
+                            movements) arrives:</p>
+                        <div class="math-display">
+                            $$P(H | E) = \frac{P(E | H) \cdot P(H)}{P(E)}$$
+                        </div>
+                        <div class="math-vars">
+                            <div class="math-var"><span class="math-inline">\(P(H)\)</span> = prior probability (model's
+                                baseline)</div>
+                            <div class="math-var"><span class="math-inline">\(P(E|H)\)</span> = likelihood of evidence
+                                given hypothesis</div>
+                            <div class="math-var"><span class="math-inline">\(P(H|E)\)</span> = posterior probability
+                                (updated belief)</div>
+                        </div>
+                        <p class="math-note">Real-time Bayesian updating ensures our probability estimates incorporate
+                            the latest market intelligence.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="example-box glass-card shadow-box">
-                <h3><i class="fa-solid fa-calculator"></i> Practical Derivation Example</h3>
-                <p>Imagine a Tennis match with two outcomes (Player A wins, Player B wins) offered by two different bookmakers:</p>
-                <ul class="example-list">
-                    <li><strong>Bookmaker 1:</strong> Player A to win at odds \( O_A = 2.10 \)</li>
-                    <li><strong>Bookmaker 2:</strong> Player B to win at odds \( O_B = 2.15 \)</li>
-                </ul>
-                <div class="math-expr highlight-expr">
-                    $$ \text{Arbitrage Margin} = \frac{1}{2.10} + \frac{1}{2.15} = 0.4761 + 0.4651 = 0.9412 $$
-                </div>
-                <p>Since \( 0.9412 < 1 \), this is a risk-free arbitrage opportunity. With a <strong>$1,000 Total Stake</strong> (\( T \)):</p>
-                <div class="math-expr">
-                    $$ S_A = \frac{1000 \times 0.4761}{0.9412} = \$505.84 \quad | \quad S_B = \frac{1000 \times 0.4651}{0.9412} = \$494.16 $$
-                </div>
-                <div class="result-box">
-                    <strong>Guaranteed Payout:</strong> \( \$505.84 \times 2.10 = \$1062.26 \) <i class="fa-solid fa-arrow-right list-arrow"></i> A guaranteed <span class="profit-text">6.22% Return on Investment (ROI)</span>.
+            <!-- PhD Example -->
+            <div class="example-section">
+                <h3 class="example-section__title"><i class="fa-solid fa-flask"></i> Worked Example: Finding a +EV Bet
+                </h3>
+                <div class="example-card example-card--purple">
+                    <div class="example-card__scenario">
+                        <div class="example-card__match">
+                            <span class="example-card__sport"><i class="fa-solid fa-futbol"></i> Football — Premier
+                                League</span>
+                            <h4>Liverpool vs Manchester City</h4>
+                        </div>
+                        <div class="example-card__odds">
+                            <div class="odds-chip odds-chip--purple">
+                                <span class="odds-chip__label">Bookmaker Odds</span>
+                                <span class="odds-chip__value">Liverpool Win @ <strong>2.80</strong></span>
+                            </div>
+                            <div class="odds-chip odds-chip--purple">
+                                <span class="odds-chip__label">Our Model</span>
+                                <span class="odds-chip__value">Liverpool Win Prob = <strong>42%</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card__steps">
+                        <div class="derivation-step">
+                            <span class="derivation-step__num">Step 1</span>
+                            <strong>Calculate the Edge</strong>
+                            <div class="math-display math-display--sm">
+                                $$\text{Edge} = 0.42 \times 2.80 - 1 = 1.176 - 1 = +0.176$$
+                            </div>
+                            <p class="result-inline result-inline--pass"><i class="fa-solid fa-circle-check"></i> Edge =
+                                +17.6% — <strong>Strong positive EV!</strong></p>
+                        </div>
+
+                        <div class="derivation-step">
+                            <span class="derivation-step__num">Step 2</span>
+                            <strong>Calculate Kelly Stake</strong> (Bankroll: $10,000, c = 0.25)
+                            <div class="math-display math-display--sm">
+                                $$f^* = 0.25 \times \frac{1.80 \times 0.42 - 0.58}{1.80} = 0.25 \times \frac{0.756 -
+                                0.58}{1.80} = 0.25 \times 0.0978 = 2.44\%$$
+                            </div>
+                            <p class="math-note">Optimal stake = <strong>$244</strong> (2.44% of bankroll)</p>
+                        </div>
+
+                        <div class="derivation-step">
+                            <span class="derivation-step__num">Step 3</span>
+                            <strong>Expected Long-Term Value</strong>
+                            <div class="math-display math-display--sm">
+                                $$EV = 0.42 \times (2.80 - 1) \times 244 - 0.58 \times 244 = \$184.46 - \$141.52 =
+                                +\$42.94$$
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card__result example-card__result--purple">
+                        <div class="result-highlight result-highlight--purple">
+                            <div class="result-highlight__icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <div>
+                                <span class="result-highlight__label">Expected Profit Per Bet</span>
+                                <span class="result-highlight__value">+$42.94 per occurrence</span>
+                            </div>
+                        </div>
+                        <p class="result-highlight__note">Over 100 similar bets, expected total profit: <strong
+                                class="text--green">+$4,294</strong>. Variance shrinks. Math wins.</p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="cta-wrapper">
-                <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-glow pulse-anim">
-                    <i class="fa-solid fa-cart-shopping"></i> Get Arbitrage Calculator Pro
+
+            <div class="section__cta">
+                <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank"
+                    rel="noopener noreferrer" class="btn btn--purple btn--lg btn--glow">
+                    <i class="fa-solid fa-cart-shopping"></i> Join the PhD Betting System
                 </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- PhD Betting System Section -->
-        <section id="phd-system" class="feature-section glass-panel fade-in delay-2">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-microscope icon-gradient"></i> PhD Betting System</h2>
-                <p>A rigorous, publication-grade approach predicting outcomes through continuous probabilistic modeling.</p>
-            </div>
-            
-            <div class="content-grid">
-                <div class="text-content shadow-box">
-                    <h3>Expected Value Calculation</h3>
-                    <p>The cornerstone of the PhD paradigm is betting exclusively when there is positive Expected Value (+EV). Over a large sample size, variance converges to the mathematical expectation.</p>
-                    
-                    <div class="formula-box">
-                        <h4>Value Valuation</h4>
-                        <div class="math-expr">
-                            $$ EV = (P_{win} \times V_{profit}) - (P_{lose} \times S) $$
-                        </div>
-                        <p class="formula-caption">Alternatively expressed as a percentage edge: \( \text{Edge} = (P_{win} \times O) - 1 > 0 \)</p>
-                    </div>
-                </div>
-
-                <div class="text-content shadow-box">
-                    <h3>Bankroll Management: Fractional Kelly</h3>
-                    <p>Maximizing geometric growth rate while minimizing the risk of ruin (drawdown). The PhD system relies on a dynamically adjusting Fractional Kelly Criterion.</p>
-                    
-                    <div class="formula-box">
-                        <h4>Kelly Formula</h4>
-                        <div class="math-expr">
-                            $$ f^* = c \left( \frac{bp - q}{b} \right) $$
-                        </div>
-                        <p class="formula-caption">Where \( b \) is the net odds received (Decimal Odds - 1), \( p \) is probability of win, \( q \) is \( 1-p \), and \( c \) is the fractional multiplier (e.g., 0.25).</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="advanced-topics glass-card shadow-box">
-                <h3><i class="fa-solid fa-chart-projector"></i> Underlying Predictive Frameworks</h3>
-                <p>The PhD Betting System utilizes advanced generalized linear models and Monte Carlo simulations:</p>
-                <div class="framework-list">
-                    <div class="framework-item">
-                        <strong><i class="fa-solid fa-chart-line"></i> Bivariate Poisson Distribution:</strong>
-                        <p>Modeling dual-entity scoring parameters (like goals in a football match) where \( X, Y \sim Poisson(\lambda, \mu) \) adjusting for defensive correlation.</p>
-                        <div class="math-expr small-math">
-                            $$ P(x,y) = e^{-(\lambda + \mu + \theta)} \frac{\lambda^x}{x!} \frac{\mu^y}{y!} \sum_{k=0}^{\min(x,y)} \binom{x}{k} \binom{y}{k} k! \left( \frac{\theta}{\lambda\mu} \right)^k $$
-                        </div>
-                    </div>
-                    <div class="framework-item">
-                        <strong><i class="fa-solid fa-brain"></i> Bayesian Updating:</strong>
-                        <p>Continuously updating prior probabilities based on new evidence (e.g., injuries, weather, line movement) according to Bayes' Theorem:</p>
-                        <div class="math-expr">
-                            $$ P(A|B) = \frac{P(B|A)P(A)}{P(B)} $$
-                        </div>
-                    </div>
-                </div>
+    <!-- ======================= PRICING / CTA SECTION ======================= -->
+    <section id="pricing" class="section section--cta">
+        <div class="section__container">
+            <div class="section__header">
+                <h2 class="section__title">Ready to <span class="text--gradient-green">Profit</span>?</h2>
+                <p class="section__desc">Get instant access to both the Arbitrage Calculator Pro and the PhD Betting
+                    System. One subscription. Two powerful tools.</p>
             </div>
 
-            <div class="cta-wrapper">
-                <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-glow pulse-anim">
-                    <i class="fa-solid fa-cart-shopping"></i> Join The PhD Betting System
+            <div class="pricing-card">
+                <div class="pricing-card__popular">Most Popular</div>
+                <div class="pricing-card__header">
+                    <h3>Full Access Bundle</h3>
+                    <p class="pricing-card__description">Arbitrage Calculator Pro + PhD Betting System</p>
+                </div>
+                <div class="pricing-card__features">
+                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Risk-free arbitrage calculator</div>
+                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> PhD-level probabilistic engine</div>
+                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Fractional Kelly staking optimizer
+                    </div>
+                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Bivariate Poisson match predictor
+                    </div>
+                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Real-time Bayesian updating</div>
+                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Monte Carlo drawdown simulation</div>
+                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Multi-sport coverage</div>
+                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Lifetime updates & support</div>
+                </div>
+                <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank"
+                    rel="noopener noreferrer" class="btn btn--primary btn--xl btn--glow btn--full">
+                    <i class="fa-solid fa-unlock"></i> Get Access Now on Whop
                 </a>
+                <p class="pricing-card__guarantee"><i class="fa-solid fa-shield-halved"></i> Satisfaction guaranteed.
+                    Cancel anytime.</p>
             </div>
-        </section>
-        
-        <!-- Author / Footer Section -->
-        <footer class="glass-panel text-center fade-in delay-3">
-            <h3 class="gradient-text">Developed by a Senior IT Architect & Mathematician</h3>
-            <p>20+ Years in Interface Design & Advanced Stochastic Modeling. Discover the intersection where beautiful UI meets rigorous mathematics.</p>
-            <div class="social-proof">
-                <span class="proof-badge"><i class="fa-solid fa-book"></i> Multiple Published Books</span>
-                <span class="proof-badge"><i class="fa-solid fa-code"></i> Senior Software Architect</span>
-                <span class="proof-badge"><i class="fa-solid fa-square-root-variable"></i> Advanced Quant Analyst</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="nav__logo-icon"><i class="fa-solid fa-chart-line"></i></span>
+                <span class="footer__name">BettingPro</span>
             </div>
-            <div class="copyright">
-                <p>&copy; 2026 Arbitrage Pro & PhD Betting. All rights reserved.</p>
-            </div>
-        </footer>
-    </main>
+            <p class="footer__copy">&copy; 2026 Arbitrage Pro & PhD Betting System. All rights reserved.</p>
+            <p class="footer__disclaimer">Disclaimer: Past results do not guarantee future outcomes. Always bet
+                responsibly.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
