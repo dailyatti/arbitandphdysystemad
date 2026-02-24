@@ -89,7 +89,7 @@
                 <div class="stat__divider"></div>
                 <div class="stat">
                     <span class="stat__number">Edge > 0</span>
-                    <span class="stat__label">Model-validated picks</span>
+                    <span class="stat__label">Model-validated signals</span>
                 </div>
                 <div class="stat__divider"></div>
                 <div class="stat">
@@ -106,7 +106,7 @@
             <div class="section__header">
                 <span class="section__badge section__badge--blue"><i class="fa-solid fa-shield-halved"></i> Math-Driven Edge</span>
                 <h2 class="section__title">Arbitrage Calculator <span class="text--gradient-blue">Pro</span></h2>
-                <p class="section__desc">Exploit price discrepancies between bookmakers. Cover every outcome.
+                <p class="section__desc">Exploit price discrepancies between market makers. Cover every outcome.
                     <strong>Outcomes are mathematically defined</strong> — regardless of who wins.</p>
             </div>
 
@@ -116,7 +116,7 @@
                     <div class="step-card__num">01</div>
                     <div class="step-card__icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
                     <h4>Find Discrepancy</h4>
-                    <p>Scan odds across bookmakers for events where implied probabilities sum to less than 100%.</p>
+                    <p>Scan odds across market makers for events where implied probabilities sum to less than 100%.</p>
                 </div>
                 <div class="step-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
                 <div class="step-card">
@@ -198,11 +198,11 @@
                             </div>
                             <div class="example-card__odds">
                                 <div class="odds-chip">
-                                    <span class="odds-chip__label">Bookmaker 1</span>
+                                    <span class="odds-chip__label">market maker 1</span>
                                     <span class="odds-chip__value">Player A @ <strong>2.10</strong></span>
                                 </div>
                                 <div class="odds-chip">
-                                    <span class="odds-chip__label">Bookmaker 2</span>
+                                    <span class="odds-chip__label">market maker 2</span>
                                     <span class="odds-chip__value">Player B @ <strong>2.15</strong></span>
                                 </div>
                             </div>
@@ -223,10 +223,10 @@
                                 <span class="derivation-step__num">Step 2</span>
                                 <strong>Calculate Stakes</strong> (Total Investment: 1,000 units)
                                 <div class="math-display math-display--sm">
-                                    $$S_A = \frac{1000 \times 0.4762}{0.9413} = \505.84 units$$
+                                    $S_A = \frac{1000 \times 0.4762}{0.9413} = 505.84 \text{ units}$
                                 </div>
                                 <div class="math-display math-display--sm">
-                                    $$S_B = \frac{1000 \times 0.4651}{0.9413} = \494.16 units$$
+                                    $S_B = \frac{1000 \times 0.4651}{0.9413} = 494.16 \text{ units}$
                                 </div>
                             </div>
 
@@ -242,13 +242,13 @@
                                     </div>
                                     <div class="payout-row">
                                         <span>Player A Wins</span>
-                                        <span>505.84 units × 2.10</span>
+                                        <span>505.84 × 2.10</span>
                                         <span class="text--green">1,062.26 units</span>
                                         <span class="text--green">+62.26 units</span>
                                     </div>
                                     <div class="payout-row">
                                         <span>Player B Wins</span>
-                                        <span>494.16 units × 2.15</span>
+                                        <span>494.16 × 2.15</span>
                                         <span class="text--green">1,062.44 units</span>
                                         <span class="text--green">+62.44 units</span>
                                     </div>
@@ -269,7 +269,7 @@
                     </div>
                 </div>
 
-                <p class="math-note" style="text-align: center; margin-bottom: 1.5rem;"><i class="fa-solid fa-circle-info"></i> Note: Arbitrage depends on execution timing, bookmaker rules, and stake limits.</p>
+                <p class="math-note" style="text-align: center; margin-bottom: 1.5rem;"><i class="fa-solid fa-circle-info"></i> Note: Arbitrage depends on execution timing, market maker rules, and stake limits.</p>
                 <div class="section__cta">
                     <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank"
                         rel="noopener noreferrer" class="btn btn--primary btn--lg btn--glow">
@@ -302,12 +302,12 @@
                 <div class="pillar-card">
                     <div class="pillar-card__icon pillar-card__icon--blue"><i class="fa-solid fa-crosshairs"></i></div>
                     <h4>Edge Detection</h4>
-                    <p>Compare our model's probabilities against bookmaker odds to find exploitable value gaps.</p>
+                    <p>Compare our model's probabilities against market maker odds to find exploitable value gaps.</p>
                 </div>
                 <div class="pillar-card">
                     <div class="pillar-card__icon pillar-card__icon--pink"><i class="fa-solid fa-coins"></i></div>
                     <h4>Kelly Staking</h4>
-                    <p>Fractional Kelly Criterion dynamically sizes each bet for optimal geometric bankroll growth.</p>
+                    <p>Fractional Kelly Criterion dynamically sizes each position for optimal geometric bankroll growth.</p>
                 </div>
                 <div class="pillar-card">
                     <div class="pillar-card__icon pillar-card__icon--orange"><i class="fa-solid fa-shield-virus"></i>
@@ -419,7 +419,7 @@
                         </div>
                         <div class="example-card__odds">
                             <div class="odds-chip odds-chip--purple">
-                                <span class="odds-chip__label">Bookmaker Odds</span>
+                                <span class="odds-chip__label">market maker Odds</span>
                                 <span class="odds-chip__value">Liverpool Win @ <strong>2.80</strong></span>
                             </div>
                             <div class="odds-chip odds-chip--purple">
@@ -454,8 +454,7 @@
                             <span class="derivation-step__num">Step 3</span>
                             <strong>Expected Long-Term Value</strong>
                             <div class="math-display math-display--sm">
-                                $$EV = 0.42 \times (2.80 - 1) \times 244 - 0.58 \times 244 = \184.46 units - \141.52 units =
-                                +\$42.94$$
+                                $EV = 0.42 \times (2.80 - 1) \times 244 - 0.58 \times 244 = 184.46 \text{ units} - 141.52 \text{ units} = +42.94 \text{ units}$
                             </div>
                         </div>
                     </div>
@@ -468,7 +467,7 @@
                                 <span class="result-highlight__value">+42.94 units per occurrence</span>
                             </div>
                         </div>
-                        <p class="result-highlight__note">Over 100 similar events, expected total profit: <strong
+                        <p class="result-highlight__note">Over 100 similar occurrences, expected total profit: <strong
                                 class="text--green">Positive Yield</strong>. Variance shrinks. Math wins.</p>
                     </div>
                 </div>
@@ -525,11 +524,10 @@
         <div class="footer__inner">
             <div class="footer__brand">
                 <span class="nav__logo-icon"><i class="fa-solid fa-chart-line"></i></span>
-                <span class="footer__name">BettingPro</span>
+                <span class="footer__name">QuantSports Analytics</span>
             </div>
             <p class="footer__copy">&copy; 2026 QuantSports Modeling Suite. All rights reserved.</p>
-            <p class="footer__disclaimer">Disclaimer: Past results do not guarantee future outcomes. Always bet
-                responsibly.</p>
+            <p class="footer__disclaimer">Disclaimer: Statistical models carry inherent risks. Past performance of a model is not indicative of future market outcomes.</p>
         </div>
     </footer>
 
