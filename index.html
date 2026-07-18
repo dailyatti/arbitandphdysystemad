@@ -1,537 +1,242 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuantSports Analytics — Math-Driven Market Efficiency</title>
-    <meta name="description"
-        content="Arbitrage calculator + probabilistic models to analyze odds, detect inefficiencies, and support disciplined execution. Execution-dependent.">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
-
-    <!-- KaTeX -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The AI Edge — AI-Assisted Tennis Analysis | QuantSports</title>
+  <meta name="description" content="A practical ebook for building a disciplined, data-driven tennis analysis workflow with Claude and Grok. Educational content for adults only.">
+  <meta name="theme-color" content="#21150c">
+  <meta property="og:title" content="The AI Edge — QuantSports">
+  <meta property="og:description" content="Read the price. Not the hype. Build a repeatable AI-assisted tennis analysis workflow.">
+  <meta property="og:image" content="https://quantsports.netlify.app/assets/the-ai-edge-cover.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Animated Background -->
-    <div class="bg-grid"></div>
-    <div class="bg-glow bg-glow--1"></div>
-    <div class="bg-glow bg-glow--2"></div>
-    <div class="bg-glow bg-glow--3"></div>
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="QuantSports home">
+        <span class="brand-mark" aria-hidden="true">Q</span>
+        <span>QuantSports</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#system">The system</a>
+        <a href="#inside">Inside the ebook</a>
+        <a href="#responsible">Responsible use</a>
+      </nav>
+      <a class="button button-small" href="https://deepbetting.tentary.com/p/95CqAt/checkout" target="_blank" rel="noopener noreferrer">
+        Get the ebook
+      </a>
+    </div>
+  </header>
 
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav__inner">
-            <a href="#" class="nav__logo">
-                <span class="nav__logo-icon"><i class="fa-solid fa-chart-line"></i></span>
-                <span>QuantSports</span>
-            </a>
-            <div class="nav__links">
-                <a href="#arbitrage">Arbitrage</a>
-                <a href="#phd">Modeling Suite</a>
-                <a href="#pricing" class="nav__cta-link">Explore Methodology</a>
-            </div>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                <i class="fa-solid fa-sun" id="theme-icon"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero -->
+  <main id="main">
     <section class="hero">
-        <div class="hero__container">
-            <div class="hero__badge">
-                <i class="fa-solid fa-bolt"></i> Built for data-driven analysts
-            </div>
-            <h1 class="hero__title">
-                Outsmart the<br>
-                <span class="hero__title--gradient">Sports Markets.</span>
-            </h1>
-            <p class="hero__subtitle">
-                Stop relying on gut feeling. Use <strong>PhD-level algorithms</strong> to find mispriced odds and structure your positions like a data-driven pro.
-            </p>
-            <div class="hero__actions">
-                <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank"
-                    rel="noopener noreferrer" class="btn btn--primary btn--lg">
-                    <i class="fa-solid fa-rocket"></i> Explore the Methodology
-                </a>
-                <a href="#arbitrage" class="btn btn--ghost btn--lg">
-                    <i class="fa-solid fa-play"></i> See How It Works
-                </a>
-            </div>
-
-            <!-- Stats Row -->
-            <div class="hero__stats">
-                <div class="stat">
-                    <span class="stat__number">varies</span>
-                    <span class="stat__label">Pricing gaps</span>
-                </div>
-                <div class="stat__divider"></div>
-                <div class="stat">
-                    <span class="stat__number"><i class="fa-solid fa-calculator"></i></span>
-                    <span class="stat__label">Execution-aware</span>
-                </div>
-                <div class="stat__divider"></div>
-                <div class="stat">
-                    <span class="stat__number">Edge > 0</span>
-                    <span class="stat__label">Model-validated signals</span>
-                </div>
-                <div class="stat__divider"></div>
-                <div class="stat">
-                    <span class="stat__number">Fast</span>
-                    <span class="stat__label">Rapid Workflow</span>
-                </div>
-            </div>
+      <div class="hero-text reveal">
+        <h1>Read the price.<br><em>Not the hype.</em></h1>
+        <p>A practical, data-driven tennis analysis system for using Claude and Grok to estimate fair probability, compare it with the market, size risk and review every decision.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://deepbetting.tentary.com/p/95CqAt/checkout" target="_blank" rel="noopener noreferrer">Get the ebook — €21.99</a>
+          <a class="button button-outline" href="#system">Explore the workflow</a>
         </div>
+        <p class="microcopy">Instant PDF access · Read on any device · Educational use only</p>
+      </div>
+
+      <div class="hero-product reveal" aria-label="The AI Edge ebook cover">
+        <div class="court-line" aria-hidden="true"></div>
+        <div class="book">
+          <span class="book-spine" aria-hidden="true">THE AI EDGE · QUANTSPORTS</span>
+          <img src="assets/the-ai-edge-cover.png" alt="The AI Edge: A Data-Driven Tennis Betting System with Claude and Grok ebook cover" width="1055" height="1491">
+        </div>
+        <div class="tennis-ball" aria-hidden="true"></div>
+      </div>
     </section>
 
-    <!-- ======================= ARBITRAGE SECTION ======================= -->
-    <section id="arbitrage" class="section">
-        <div class="section__container">
-            <div class="section__header">
-                <span class="section__badge section__badge--blue"><i class="fa-solid fa-shield-halved"></i> Math-Driven Edge</span>
-                <h2 class="section__title">Arbitrage Calculator <span class="text--gradient-blue">Pro</span></h2>
-                <p class="section__desc">Exploit price discrepancies between market makers. Cover every outcome.
-                    <strong>Outcomes are mathematically defined</strong> — regardless of who wins.</p>
-            </div>
+    <section class="workflow section" id="system">
+      <div class="section-heading reveal">
+        <p class="section-number">01 · The system</p>
+        <h2>A repeatable six-step workflow</h2>
+        <p>Move from a match opinion to a documented decision with the same process every time.</p>
+      </div>
 
-            <!-- How It Works Visual -->
-            <div class="how-it-works">
-                <div class="step-card">
-                    <div class="step-card__num">01</div>
-                    <div class="step-card__icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h4>Find Discrepancy</h4>
-                    <p>Scan odds across market makers for events where implied probabilities sum to less than 100%.</p>
-                </div>
-                <div class="step-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
-                <div class="step-card">
-                    <div class="step-card__num">02</div>
-                    <div class="step-card__icon"><i class="fa-solid fa-calculator"></i></div>
-                    <h4>Calculate Stakes</h4>
-                    <p>Our engine calculates exactly how many units to place on each side to mathematically balance your position.</p>
-                </div>
-                <div class="step-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
-                <div class="step-card">
-                    <div class="step-card__num">03</div>
-                    <div class="step-card__icon"><i class="fa-solid fa-sack-dollar"></i></div>
-                    <h4>Capture the Edge</h4>
-                    <p>Execute the strategy. No matter who scores or wins, your mathematical edge is locked in before the game even starts.</p>
-                </div>
-            </div>
-
-            <!-- Math Deep Dive -->
-            <div class="math-section">
-                <h3 class="math-section__title"><i class="fa-solid fa-square-root-variable"></i> The Mathematics Behind
-                    Arbitrage</h3>
-
-                <div class="math-grid">
-                    <div class="math-card">
-                        <div class="math-card__header">
-                            <span class="math-card__tag">Foundation</span>
-                            <h4>Arbitrage Detection Condition</h4>
-                        </div>
-                        <p>An arbitrage exists when the sum of implied probabilities across all mutually exclusive
-                            outcomes is <strong>strictly less than 1</strong>:</p>
-                        <div class="math-display">
-                            $$\text{Arb Margin} = \sum_{i=1}^{n} \frac{1}{O_i} < 1$$ </div>
-                                <p class="math-note">Where <span class="math-inline">\(O_i\)</span> = decimal odds for
-                                    outcome <span class="math-inline">\(i\)</span>, and <span
-                                        class="math-inline">\(n\)</span> = total number of possible outcomes.</p>
-                        </div>
-
-                        <div class="math-card">
-                            <div class="math-card__header">
-                                <span class="math-card__tag">Core Formula</span>
-                                <h4>Optimal Stake Allocation</h4>
-                            </div>
-                            <p>To equalize returns regardless of outcome, distribute your total investment <span
-                                    class="math-inline">\(T\)</span> as follows:</p>
-                            <div class="math-display">
-                                $$S_i = \frac{T \cdot \dfrac{1}{O_i}}{\displaystyle\sum_{j=1}^{n} \dfrac{1}{O_j}}$$
-                            </div>
-                            <p class="math-note">Where <span class="math-inline">\(S_i\)</span> = stake on outcome <span
-                                    class="math-inline">\(i\)</span>, <span class="math-inline">\(T\)</span> = total
-                                bankroll to invest.</p>
-                        </div>
-
-                        <div class="math-card math-card--wide">
-                            <div class="math-card__header">
-                                <span class="math-card__tag">Profit Formula</span>
-                                <h4>Calculated Edge</h4>
-                            </div>
-                            <p>Your identified statistical edge from any arbitrage opportunity is:</p>
-                            <div class="math-display">
-                                $$\text{ROI} = \left(\frac{1}{\displaystyle\sum_{i=1}^{n} \frac{1}{O_i}} - 1\right)
-                                \times 100\%$$
-                            </div>
-                            <p class="math-note">The smaller the margin sum, the larger your built-in edge. Values
-                                below 0.95 are excellent opportunities.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Live Example -->
-                <div class="example-section">
-                    <h3 class="example-section__title"><i class="fa-solid fa-flask"></i> Worked Example: Step-by-Step
-                        Derivation</h3>
-                    <div class="example-card">
-                        <div class="example-card__scenario">
-                            <div class="example-card__match">
-                                <span class="example-card__sport"><i class="fa-solid fa-baseball-bat-ball"></i> Tennis —
-                                    ATP Final</span>
-                                <h4>Player A vs Player B</h4>
-                            </div>
-                            <div class="example-card__odds">
-                                <div class="odds-chip">
-                                    <span class="odds-chip__label">market maker 1</span>
-                                    <span class="odds-chip__value">Player A @ <strong>2.10</strong></span>
-                                </div>
-                                <div class="odds-chip">
-                                    <span class="odds-chip__label">market maker 2</span>
-                                    <span class="odds-chip__value">Player B @ <strong>2.15</strong></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="example-card__steps">
-                            <div class="derivation-step">
-                                <span class="derivation-step__num">Step 1</span>
-                                <strong>Check for Arbitrage</strong>
-                                <div class="math-display math-display--sm">
-                                    $$\frac{1}{2.10} + \frac{1}{2.15} = 0.4762 + 0.4651 = 0.9413$$
-                                </div>
-                                <p class="result-inline result-inline--pass"><i class="fa-solid fa-circle-check"></i>
-                                    0.9413 < 1.0 — <strong>Arbitrage Confirmed!</strong></p>
-                            </div>
-
-                            <div class="derivation-step">
-                                <span class="derivation-step__num">Step 2</span>
-                                <strong>Calculate Stakes</strong> (Total Investment: 1,000 units)
-                                <div class="math-display math-display--sm">
-                                    $S_A = \frac{1000 \times 0.4762}{0.9413} = 505.84 \text{ units}$
-                                </div>
-                                <div class="math-display math-display--sm">
-                                    $S_B = \frac{1000 \times 0.4651}{0.9413} = 494.16 \text{ units}$
-                                </div>
-                            </div>
-
-                            <div class="derivation-step">
-                                <span class="derivation-step__num">Step 3</span>
-                                <strong>Verify Calculated Payout</strong>
-                                <div class="payout-table">
-                                    <div class="payout-row payout-row--header">
-                                        <span>Scenario</span>
-                                        <span>Calculation</span>
-                                        <span>Payout</span>
-                                        <span>Net Delta</span>
-                                    </div>
-                                    <div class="payout-row">
-                                        <span>Player A Wins</span>
-                                        <span>505.84 × 2.10</span>
-                                        <span class="text--green">1,062.26 units</span>
-                                        <span class="text--green">+62.26 units</span>
-                                    </div>
-                                    <div class="payout-row">
-                                        <span>Player B Wins</span>
-                                        <span>494.16 × 2.15</span>
-                                        <span class="text--green">1,062.44 units</span>
-                                        <span class="text--green">+62.44 units</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="example-card__result">
-                            <div class="result-highlight">
-                                <div class="result-highlight__icon"><i class="fa-solid fa-trophy"></i></div>
-                                <div>
-                                    <span class="result-highlight__label">Calculated Delta</span>
-                                    <span class="result-highlight__value">Positive Delta — Statistical Edge</span>
-                                </div>
-                            </div>
-                            <p class="result-highlight__note">Outcome-agnostic structure. Execution-dependent. Pure mathematics.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="math-note" style="text-align: center; margin-bottom: 1.5rem;"><i class="fa-solid fa-circle-info"></i> Note: Arbitrage depends on execution timing, market maker rules, and stake limits.</p>
-                <div class="section__cta">
-                    <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank"
-                        rel="noopener noreferrer" class="btn btn--primary btn--lg btn--glow">
-                        <i class="fa-solid fa-cart-shopping"></i> Get Arbitrage Calculator Pro
-                    </a>
-                </div>
-            </div>
+      <ol class="workflow-track">
+        <li class="reveal">
+          <span class="step-number">1</span>
+          <span class="step-icon" aria-hidden="true">⌕</span>
+          <h3>Fair probability</h3>
+          <p>Estimate true win probability with Claude and Grok.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-number">2</span>
+          <span class="step-icon" aria-hidden="true">↗</span>
+          <h3>Market price</h3>
+          <p>Convert odds to implied probability and compare.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-number">3</span>
+          <span class="step-icon" aria-hidden="true">◎</span>
+          <h3>Odds band</h3>
+          <p>Focus on the core band where edges appear.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-number">4</span>
+          <span class="step-icon" aria-hidden="true">⌘</span>
+          <h3>Two-model check</h3>
+          <p>Require agreement or a clear reason for divergence.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-number">5</span>
+          <span class="step-icon" aria-hidden="true">◔</span>
+          <h3>Stake sizing</h3>
+          <p>Use disciplined units and fractional Kelly thinking.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-number">6</span>
+          <span class="step-icon" aria-hidden="true">▤</span>
+          <h3>Weekly review</h3>
+          <p>Track results, review decisions and refine.</p>
+        </li>
+      </ol>
     </section>
 
-    <!-- ======================= PhD SYSTEM SECTION ======================= -->
-    <section id="phd" class="section section--alt">
-        <div class="section__container">
-            <div class="section__header">
-                <span class="section__badge section__badge--purple"><i class="fa-solid fa-graduation-cap"></i> PhD
-                    Level</span>
-                <h2 class="section__title">Probabilistic Modeling <span class="text--gradient-purple">Suite</span></h2>
-                <p class="section__desc">A publication-grade probabilistic engine that identifies <strong>positive
-                        Expected Value (+EV)</strong> opportunities with mathematical precision. When the edge is in your favor,
-                    compounding does the rest.</p>
-            </div>
+    <section class="ledger section">
+      <div class="section-heading reveal">
+        <p class="section-number">02 · The evidence</p>
+        <h2>What the tracked ledger taught us</h2>
+        <p>One historical sample. Real cases. No guarantees.</p>
+      </div>
 
-            <!-- Pillars -->
-            <div class="pillar-grid">
-                <div class="pillar-card">
-                    <div class="pillar-card__icon pillar-card__icon--green"><i class="fa-solid fa-chart-pie"></i></div>
-                    <h4>Probability Modeling</h4>
-                    <p>Bivariate Poisson, xG regression, and Bayesian networks to estimate true outcome probabilities.
-                    </p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-card__icon pillar-card__icon--blue"><i class="fa-solid fa-crosshairs"></i></div>
-                    <h4>Edge Detection</h4>
-                    <p>Compare our model's probabilities against market maker odds to find exploitable value gaps.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-card__icon pillar-card__icon--pink"><i class="fa-solid fa-coins"></i></div>
-                    <h4>Kelly Staking</h4>
-                    <p>Fractional Kelly Criterion dynamically sizes each position for optimal geometric bankroll growth.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-card__icon pillar-card__icon--orange"><i class="fa-solid fa-shield-virus"></i>
-                    </div>
-                    <h4>Risk Control</h4>
-                    <p>CVaR95 Monte Carlo simulation protects against ruin and keeps drawdowns manageable.</p>
-                </div>
-            </div>
-
-            <!-- Math Deep Dive -->
-            <div class="math-section">
-                <h3 class="math-section__title"><i class="fa-solid fa-atom"></i> Core Mathematical Framework</h3>
-
-                <div class="math-grid">
-                    <div class="math-card math-card--purple">
-                        <div class="math-card__header">
-                            <span class="math-card__tag math-card__tag--purple">Core</span>
-                            <h4>Expected Value (EV)</h4>
-                        </div>
-                        <p>An opportunity has positive expected value when your estimated probability multiplied by the payout
-                            exceeds your stake:</p>
-                        <div class="math-display">
-                            $$EV = \underbrace{P_{\text{win}} \cdot (O - 1)}_{\text{expected gain}} - \underbrace{(1 -
-                            P_{\text{win}}) \cdot 1}_{\text{expected loss}}$$
-                        </div>
-                        <p>Simplified to the <strong>edge percentage</strong>:</p>
-                        <div class="math-display">
-                            $$\text{Edge} = P_{\text{win}} \times O - 1$$
-                        </div>
-                        <p class="math-note">We only execute when <span class="math-inline text--green">\(\text{Edge} >
-                                0\)</span>. A 5% edge corresponds to an expected value of +5 units per 100 units over the long run.</p>
-                    </div>
-
-                    <div class="math-card math-card--purple">
-                        <div class="math-card__header">
-                            <span class="math-card__tag math-card__tag--purple">Staking</span>
-                            <h4>Fractional Kelly Criterion</h4>
-                        </div>
-                        <p>Determines the mathematically optimal fraction of your bankroll to wager on each position:</p>
-                        <div class="math-display">
-                            $$f^* = c \cdot \frac{b \cdot p - q}{b}$$
-                        </div>
-                        <div class="math-vars">
-                            <div class="math-var"><span class="math-inline">\(b\)</span> = net decimal odds <span
-                                    class="math-inline">\((O - 1)\)</span></div>
-                            <div class="math-var"><span class="math-inline">\(p\)</span> = probability of winning</div>
-                            <div class="math-var"><span class="math-inline">\(q\)</span> = probability of losing <span
-                                    class="math-inline">\((1 - p)\)</span></div>
-                            <div class="math-var"><span class="math-inline">\(c\)</span> = fractional multiplier
-                                (typically 0.25)</div>
-                        </div>
-                        <p class="math-note">Using <span class="math-inline">\(c = 0.25\)</span> (Quarter Kelly) reduces
-                            variance by 75% while retaining 50% of the growth rate of Full Kelly.</p>
-                    </div>
-
-                    <div class="math-card math-card--purple">
-                        <div class="math-card__header">
-                            <span class="math-card__tag math-card__tag--purple">Prediction</span>
-                            <h4>Bivariate Poisson Model</h4>
-                        </div>
-                        <p>Models the joint probability of two teams scoring <span class="math-inline">\(x\)</span> and
-                            <span class="math-inline">\(y\)</span> goals, accounting for correlation <span
-                                class="math-inline">\(\theta\)</span>:</p>
-                        <div class="math-display">
-                            $$P(X\!=\!x, Y\!=\!y) = e^{-(\lambda+\mu+\theta)} \frac{\lambda^x}{x!}\frac{\mu^y}{y!}
-                            \sum_{k=0}^{\min(x,y)} \binom{x}{k}\binom{y}{k} k!
-                            \left(\frac{\theta}{\lambda\mu}\right)^{\!k}$$
-                        </div>
-                        <p class="math-note">Where <span class="math-inline">\(\lambda\)</span> = home attack, <span
-                                class="math-inline">\(\mu\)</span> = away attack, <span
-                                class="math-inline">\(\theta\)</span> = correlation coefficient (Dixon-Coles
-                            correction).</p>
-                    </div>
-
-                    <div class="math-card math-card--purple">
-                        <div class="math-card__header">
-                            <span class="math-card__tag math-card__tag--purple">Adaptation</span>
-                            <h4>Bayesian Updating</h4>
-                        </div>
-                        <p>Our system continuously updates probabilities as new evidence (injuries, weather, line
-                            movements) arrives:</p>
-                        <div class="math-display">
-                            $$P(H | E) = \frac{P(E | H) \cdot P(H)}{P(E)}$$
-                        </div>
-                        <div class="math-vars">
-                            <div class="math-var"><span class="math-inline">\(P(H)\)</span> = prior probability (model's
-                                baseline)</div>
-                            <div class="math-var"><span class="math-inline">\(P(E|H)\)</span> = likelihood of evidence
-                                given hypothesis</div>
-                            <div class="math-var"><span class="math-inline">\(P(H|E)\)</span> = posterior probability
-                                (updated belief)</div>
-                        </div>
-                        <p class="math-note">Real-time Bayesian updating ensures our probability estimates incorporate
-                            the latest market intelligence.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PhD Example -->
-            <div class="example-section">
-                <h3 class="example-section__title"><i class="fa-solid fa-flask"></i> Worked Example: Finding a +EV Bet
-                </h3>
-                <div class="example-card example-card--purple">
-                    <div class="example-card__scenario">
-                        <div class="example-card__match">
-                            <span class="example-card__sport"><i class="fa-solid fa-futbol"></i> Football — Premier
-                                League</span>
-                            <h4>Liverpool vs Manchester City</h4>
-                        </div>
-                        <div class="example-card__odds">
-                            <div class="odds-chip odds-chip--purple">
-                                <span class="odds-chip__label">market maker Odds</span>
-                                <span class="odds-chip__value">Liverpool Win @ <strong>2.80</strong></span>
-                            </div>
-                            <div class="odds-chip odds-chip--purple">
-                                <span class="odds-chip__label">Our Model</span>
-                                <span class="odds-chip__value">Liverpool Win Prob = <strong>42%</strong></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="example-card__steps">
-                        <div class="derivation-step">
-                            <span class="derivation-step__num">Step 1</span>
-                            <strong>Calculate the Edge</strong>
-                            <div class="math-display math-display--sm">
-                                $$\text{Edge} = 0.42 \times 2.80 - 1 = 1.176 - 1 = +0.176$$
-                            </div>
-                            <p class="result-inline result-inline--pass"><i class="fa-solid fa-circle-check"></i> Edge =
-                                +17.6% — <strong>Strong positive EV!</strong></p>
-                        </div>
-
-                        <div class="derivation-step">
-                            <span class="derivation-step__num">Step 2</span>
-                            <strong>Calculate Kelly Stake</strong> (Bankroll: 10,000 units, c = 0.25)
-                            <div class="math-display math-display--sm">
-                                $$f^* = 0.25 \times \frac{1.80 \times 0.42 - 0.58}{1.80} = 0.25 \times \frac{0.756 -
-                                0.58}{1.80} = 0.25 \times 0.0978 = 2.44\%$$
-                            </div>
-                            <p class="math-note">Optimal stake = <strong>244 units</strong> (2.44% of bankroll)</p>
-                        </div>
-
-                        <div class="derivation-step">
-                            <span class="derivation-step__num">Step 3</span>
-                            <strong>Expected Long-Term Value</strong>
-                            <div class="math-display math-display--sm">
-                                $EV = 0.42 \times (2.80 - 1) \times 244 - 0.58 \times 244 = 184.46 \text{ units} - 141.52 \text{ units} = +42.94 \text{ units}$
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="example-card__result example-card__result--purple">
-                        <div class="result-highlight result-highlight--purple">
-                            <div class="result-highlight__icon"><i class="fa-solid fa-chart-line"></i></div>
-                            <div>
-                                <span class="result-highlight__label">Expected Value Per Event</span>
-                                <span class="result-highlight__value">+42.94 units per occurrence</span>
-                            </div>
-                        </div>
-                        <p class="result-highlight__note">Over 100 similar occurrences, expected aggregate EV: <strong
-                                class="text--green">Positive Yield</strong>. Variance shrinks. Math wins.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section__cta">
-                <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank"
-                    rel="noopener noreferrer" class="btn btn--purple btn--lg btn--glow">
-                    <i class="fa-solid fa-cart-shopping"></i> Join the Modeling Suite
-                </a>
-            </div>
-        </div>
+      <div class="ledger-strip">
+        <article class="ledger-item reveal">
+          <span class="ledger-icon" aria-hidden="true">▣</span>
+          <div><strong>366</strong><h3>graded tennis bets</h3><p>Tracked and reviewed across multiple surfaces and levels.</p></div>
+        </article>
+        <article class="ledger-item reveal">
+          <span class="ledger-icon" aria-hidden="true">◎</span>
+          <div><strong>1.80–2.00</strong><h3>core odds band</h3><p>Where the most consistent process observations appeared.</p></div>
+        </article>
+        <article class="ledger-item reveal">
+          <span class="ledger-icon" aria-hidden="true">△</span>
+          <div><strong>2.51–3.00</strong><h3>danger zone</h3><p>Higher variance and lower process reliability in the sample.</p></div>
+        </article>
+      </div>
+      <p class="sample-note reveal">These are observations from one tracked sample using this process. Past performance does not predict future results, and your results will differ.</p>
     </section>
 
-    <!-- ======================= PRICING / CTA SECTION ======================= -->
-    <section id="pricing" class="section section--cta">
-        <div class="section__container">
-            <div class="section__header">
-                <h2 class="section__title">Ready to Build an <span class="text--gradient-green">Edge</span>?</h2>
-                <p class="section__desc">Get instant access to both the Arbitrage Calculator Pro and the Probabilistic Modeling Suite. One subscription. Two powerful tools.</p>
-            </div>
+    <section class="inside section" id="inside">
+      <div class="section-heading reveal">
+        <p class="section-number">03 · The ebook</p>
+        <h2>Inside The AI Edge</h2>
+        <p>Ready-to-use prompts and decision rules built around a complete research workflow.</p>
+      </div>
 
-            <div class="pricing-card">
-                <div class="pricing-card__popular">Most Popular</div>
-                <div class="pricing-card__header">
-                    <h3>Full Access Bundle</h3>
-                    <p class="pricing-card__description">Arbitrage Calculator Pro + Probabilistic Modeling Suite</p>
-                </div>
-                <div class="pricing-card__features">
-                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Math-driven arbitrage calculator</div>
-                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> PhD-level probabilistic engine</div>
-                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Fractional Kelly staking optimizer
-                    </div>
-                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Bivariate Poisson match predictor
-                    </div>
-                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Real-time Bayesian updating</div>
-                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Monte Carlo drawdown simulation</div>
-                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Multi-sport coverage</div>
-                    <div class="pricing-feature"><i class="fa-solid fa-check"></i> Lifetime updates & support</div>
-                </div>
-                <a href="https://whop.com/arbitrage-calculator-pro-8/arbitrage-calculator-pro/" target="_blank"
-                    rel="noopener noreferrer" class="btn btn--primary btn--xl btn--glow btn--full">
-                    <i class="fa-solid fa-unlock"></i> Explore the Methodology on Whop
-                </a>
-                <p class="pricing-card__guarantee"><i class="fa-solid fa-shield-halved"></i> Satisfaction guaranteed.
-                    Cancel anytime.</p>
-            </div>
+      <div class="book-spread">
+        <div class="contents-rail reveal" role="list" aria-label="Ebook contents">
+          <button type="button" class="content-tab is-active" data-chapter="screening" role="listitem"><span>01</span> Slate screening</button>
+          <button type="button" class="content-tab" data-chapter="match" role="listitem"><span>02</span> Match analysis</button>
+          <button type="button" class="content-tab" data-chapter="ev" role="listitem"><span>03</span> EV calculation</button>
+          <button type="button" class="content-tab" data-chapter="kelly" role="listitem"><span>04</span> Kelly staking</button>
+          <button type="button" class="content-tab" data-chapter="redteam" role="listitem"><span>05</span> Red-team review</button>
+          <button type="button" class="content-tab" data-chapter="shopping" role="listitem"><span>06</span> Line shopping</button>
+          <button type="button" class="content-tab" data-chapter="review" role="listitem"><span>07</span> Weekly review</button>
         </div>
+
+        <div class="open-book reveal" aria-live="polite">
+          <article class="book-page">
+            <p class="page-label">THE AI EDGE · WORKFLOW</p>
+            <h3 id="chapter-title">Daily slate screening</h3>
+            <p id="chapter-intro">Start wide, then narrow the slate before spending time on individual matches.</p>
+            <h4>Inputs</h4>
+            <ul id="chapter-inputs">
+              <li>Today’s eligible tennis matches</li>
+              <li>Current decimal odds and surface</li>
+              <li>Recent form and availability notes</li>
+            </ul>
+          </article>
+          <article class="book-page page-output">
+            <p class="page-label">PROMPT OUTPUT</p>
+            <h3>Decision record</h3>
+            <div class="prompt-box">
+              <span>Return</span>
+              <p id="chapter-output">A ranked shortlist, skip list, key uncertainty and the next research question for each match.</p>
+            </div>
+            <blockquote>“The goal is not more picks. It is fewer, better-documented decisions.”</blockquote>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__inner">
-            <div class="footer__brand">
-                <span class="nav__logo-icon"><i class="fa-solid fa-chart-line"></i></span>
-                <span class="footer__name">QuantSports Analytics</span>
-            </div>
-            <p class="footer__copy">&copy; 2026 QuantSports Modeling Suite. All rights reserved.</p>
-            <p class="footer__disclaimer">Disclaimer: Statistical models carry inherent risks. Past performance of a model is not indicative of future market outcomes.</p>
-            <p class="footer__disclaimer">This tool is for educational and analytical purposes only. Trading sports data involves risk. Not financial advice.</p>
-        </div>
-    </footer>
+    <section class="discipline section" id="responsible">
+      <div class="section-heading reveal">
+        <p class="section-number">04 · Fit & responsibility</p>
+        <h2>Built for disciplined decisions</h2>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="fit-grid">
+        <article class="fit-panel fit-panel-positive reveal">
+          <h3>For you, if you…</h3>
+          <ul>
+            <li>Understand basic betting markets</li>
+            <li>Want a repeatable, rules-based analysis workflow</li>
+            <li>Prefer long-term process over short-term noise</li>
+            <li>Can use AI assistants as research tools, not oracles</li>
+          </ul>
+        </article>
+        <article class="fit-panel reveal">
+          <h3>Not for you, if you…</h3>
+          <ul class="negative-list">
+            <li>Want shortcuts, tips or instant results</li>
+            <li>Look for fixed outcomes or certain picks</li>
+            <li>Will not track and review decisions</li>
+            <li>Expect one sample to predict your outcome</li>
+          </ul>
+        </article>
+        <article class="responsible-panel reveal">
+          <span class="shield" aria-hidden="true">◇</span>
+          <div>
+            <h3>Responsible betting</h3>
+            <p>This ebook is for education and disciplined research only. Bet only what you can afford to lose. Set limits, take breaks and stay in control.</p>
+            <p>You must be of legal betting age and betting must be lawful where you live.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="purchase">
+      <div class="purchase-inner reveal">
+        <img src="assets/the-ai-edge-cover.png" alt="" width="1055" height="1491">
+        <div class="purchase-copy">
+          <p class="section-number">The complete PDF guide</p>
+          <h2>Get the ebook <span>€21.99</span></h2>
+          <ul>
+            <li>Instant PDF download</li>
+            <li>Use on any device</li>
+            <li>Lifetime access</li>
+          </ul>
+        </div>
+        <div class="purchase-action">
+          <a class="button button-large" href="https://deepbetting.tentary.com/p/95CqAt/checkout" target="_blank" rel="noopener noreferrer">Get instant access</a>
+          <span>Secure checkout on Tentary</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p><strong>Disclaimer:</strong> This ebook is for informational and educational purposes only. It does not constitute gambling, financial or investment advice. No outcome is guaranteed. Sports betting carries real financial risk. You are responsible for your decisions and for complying with the laws in your jurisdiction.</p>
+      <div class="footer-bottom">
+        <span>© 2026 QuantSports</span>
+        <a href="https://deepbetting.tentary.com/legal/679201326/contact" target="_blank" rel="noopener noreferrer">Contact</a>
+        <a href="#responsible">Responsible use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
