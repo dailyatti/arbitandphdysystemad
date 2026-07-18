@@ -628,14 +628,14 @@ blockquote {
   .header-inner .button-small { padding: .45rem .7rem; font-size: .72rem; }
   .hero {
     min-height: auto;
-    padding: 112px 20px 54px;
+    padding: 88px 20px 54px;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
-  .hero-text { text-align: center; margin: 0 auto; }
+  .hero-text { order: 2; text-align: center; margin: 0 auto; }
   .hero h1 { font-size: clamp(3rem, 14vw, 4.7rem); }
   .hero-actions { justify-content: center; flex-wrap: wrap; }
-  .hero-product { height: 440px; }
+  .hero-product { order: 1; height: 370px; }
   .hero-product-link { width: min(430px, 100%); }
   .hero-product::after { display: none; }
   .section { padding: 72px 20px; }
