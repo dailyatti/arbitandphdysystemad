@@ -54,7 +54,11 @@ tabs.forEach((tab) => {
     const chapter = chapters[tab.dataset.chapter];
     if (!chapter) return;
 
-    tabs.forEach((item) => item.classList.toggle("is-active", item === tab));
+    tabs.forEach((item) => {
+      const isActive = item === tab;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
+    });
     title.textContent = chapter.title;
     intro.textContent = chapter.intro;
     inputs.replaceChildren(...chapter.inputs.map((text) => {
@@ -78,6 +82,21 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
 const header = document.querySelector(".site-header");
-const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 120);
-window.addEventListener("scroll", updateHeader, { passive: true });
-updateHeader();
+let scrollFrame = 0;
+
+const updateScrollUI = () => {
+  scrollFrame = 0;
+  const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+  header.classList.toggle("is-scrolled", window.scrollY > 48);
+  document.documentElement.style.setProperty("--scroll-progress", progress.toFixed(4));
+};
+
+const requestScrollUpdate = () => {
+  if (scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(updateScrollUI);
+};
+
+window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+window.addEventListener("resize", requestScrollUpdate, { passive: true });
+updateScrollUI();

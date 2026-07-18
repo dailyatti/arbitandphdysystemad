@@ -9,6 +9,7 @@
   <meta property="og:title" content="The AI Edge — QuantSports">
   <meta property="og:description" content="Read the price. Not the hype. Build a repeatable AI-assisted tennis analysis workflow.">
   <meta property="og:image" content="https://quantsports.netlify.app/assets/the-ai-edge-cover.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -33,6 +34,7 @@
       </a>
     </div>
   </header>
+  <div class="reading-progress" aria-hidden="true"></div>
 
   <main id="main">
     <section class="hero">
@@ -46,13 +48,11 @@
         <p class="microcopy">Instant PDF access · Read on any device · Educational use only</p>
       </div>
 
-      <div class="hero-product reveal" aria-label="The AI Edge ebook cover">
-        <div class="court-line" aria-hidden="true"></div>
-        <div class="book">
-          <span class="book-spine" aria-hidden="true">THE AI EDGE · QUANTSPORTS</span>
-          <img src="assets/the-ai-edge-cover.png" alt="The AI Edge: A Data-Driven Tennis Betting System with Claude and Grok ebook cover" width="1055" height="1491">
-        </div>
-        <div class="tennis-ball" aria-hidden="true"></div>
+      <div class="hero-product reveal">
+        <picture>
+          <source srcset="assets/hero-ebook-mockup-v2.webp" type="image/webp">
+          <img class="hero-product-art" src="assets/hero-ebook-mockup-v2.png" alt="The AI Edge ebook displayed as a premium hardcover beside a tennis ball on a clay court" width="1024" height="1024" fetchpriority="high" decoding="async">
+        </picture>
       </div>
     </section>
 
@@ -66,37 +66,37 @@
       <ol class="workflow-track">
         <li class="reveal">
           <span class="step-number">1</span>
-          <span class="step-icon" aria-hidden="true">⌕</span>
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/><path d="M8 10.5h5M10.5 8v5"/></svg>
           <h3>Fair probability</h3>
           <p>Estimate true win probability with Claude and Grok.</p>
         </li>
         <li class="reveal">
           <span class="step-number">2</span>
-          <span class="step-icon" aria-hidden="true">↗</span>
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-4 3 2 5-6"/><path d="M15 7h4v4"/></svg>
           <h3>Market price</h3>
           <p>Convert odds to implied probability and compare.</p>
         </li>
         <li class="reveal">
           <span class="step-number">3</span>
-          <span class="step-icon" aria-hidden="true">◎</span>
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>
           <h3>Odds band</h3>
           <p>Focus on the core band where edges appear.</p>
         </li>
         <li class="reveal">
           <span class="step-number">4</span>
-          <span class="step-icon" aria-hidden="true">⌘</span>
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="12" cy="17" r="3"/><path d="M9.7 8.3 11 14M14.3 8.3 13 14M10 7h4"/></svg>
           <h3>Two-model check</h3>
           <p>Require agreement or a clear reason for divergence.</p>
         </li>
         <li class="reveal">
           <span class="step-number">5</span>
-          <span class="step-icon" aria-hidden="true">◔</span>
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9h-9V3Z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15V3.5Z"/></svg>
           <h3>Stake sizing</h3>
           <p>Use disciplined units and fractional Kelly thinking.</p>
         </li>
         <li class="reveal">
           <span class="step-number">6</span>
-          <span class="step-icon" aria-hidden="true">▤</span>
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v3M15 3v3M8 10h8M8 14h8M8 18h5"/></svg>
           <h3>Weekly review</h3>
           <p>Track results, review decisions and refine.</p>
         </li>
@@ -135,14 +135,14 @@
       </div>
 
       <div class="book-spread">
-        <div class="contents-rail reveal" role="list" aria-label="Ebook contents">
-          <button type="button" class="content-tab is-active" data-chapter="screening" role="listitem"><span>01</span> Slate screening</button>
-          <button type="button" class="content-tab" data-chapter="match" role="listitem"><span>02</span> Match analysis</button>
-          <button type="button" class="content-tab" data-chapter="ev" role="listitem"><span>03</span> EV calculation</button>
-          <button type="button" class="content-tab" data-chapter="kelly" role="listitem"><span>04</span> Kelly staking</button>
-          <button type="button" class="content-tab" data-chapter="redteam" role="listitem"><span>05</span> Red-team review</button>
-          <button type="button" class="content-tab" data-chapter="shopping" role="listitem"><span>06</span> Line shopping</button>
-          <button type="button" class="content-tab" data-chapter="review" role="listitem"><span>07</span> Weekly review</button>
+        <div class="contents-rail reveal" role="group" aria-label="Ebook contents">
+          <button type="button" class="content-tab is-active" data-chapter="screening" aria-pressed="true"><span>01</span> Slate screening</button>
+          <button type="button" class="content-tab" data-chapter="match" aria-pressed="false"><span>02</span> Match analysis</button>
+          <button type="button" class="content-tab" data-chapter="ev" aria-pressed="false"><span>03</span> EV calculation</button>
+          <button type="button" class="content-tab" data-chapter="kelly" aria-pressed="false"><span>04</span> Kelly staking</button>
+          <button type="button" class="content-tab" data-chapter="redteam" aria-pressed="false"><span>05</span> Red-team review</button>
+          <button type="button" class="content-tab" data-chapter="shopping" aria-pressed="false"><span>06</span> Line shopping</button>
+          <button type="button" class="content-tab" data-chapter="review" aria-pressed="false"><span>07</span> Weekly review</button>
         </div>
 
         <div class="open-book reveal" aria-live="polite">
@@ -208,14 +208,14 @@
 
     <section class="purchase">
       <div class="purchase-inner reveal">
-        <img src="assets/the-ai-edge-cover.png" alt="" width="1055" height="1491">
+        <img src="assets/the-ai-edge-cover.png" alt="" width="1055" height="1491" loading="lazy" decoding="async">
         <div class="purchase-copy">
           <p class="section-number">The complete PDF guide</p>
           <h2>Get the ebook <span>€21.99</span></h2>
           <ul>
             <li>Instant PDF download</li>
             <li>Use on any device</li>
-            <li>Lifetime access</li>
+            <li>Seven reusable prompt workflows</li>
           </ul>
         </div>
         <div class="purchase-action">
